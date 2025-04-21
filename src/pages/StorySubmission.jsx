@@ -1,13 +1,27 @@
 import { useState } from "react";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebase.js";
 
 function StorySubmission() {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
 
-    const handleSubmit = (e) => {
+    // RULES CURRENTLY DON'T ALLOW THIS
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Story title", title);
         console.log("Story text", text);
+
+        try {
+            const docRef = await addDoc(collection(db, "stories"), {
+                title: title,
+                story: text,
+            })
+            console.log("Added document with ID: ", docRef.id);
+        }
+        catch (e) {
+            console.error("Error adding new story: ", e);
+        }
     }
 
     return (

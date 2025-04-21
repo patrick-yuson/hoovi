@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 function Home() {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
 
     return (
         <>
@@ -17,6 +17,9 @@ function Home() {
             </div>
             <div>
                 <Link to="/story-submission">Submit a story!</Link>
+            </div>
+            <div>
+                <Link to="/login">Login</Link>
             </div>
         </>
     )
