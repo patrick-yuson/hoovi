@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../firebase.js";
+import { auth, db } from "../../firebase.js";
+import { onAuthStateChanged } from "firebase/auth";
 
 function StorySubmission() {
     const [title, setTitle] = useState("");
     const [text, setText] = useState("");
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (currUser) => {
+            setUser(currUser);
+        })
+
+        return () => unsubscribe();
+    }, []);
 
     // RULES CURRENTLY DON'T ALLOW THIS
     const handleSubmit = async (e) => {
@@ -27,6 +37,13 @@ function StorySubmission() {
     return (
         <>
             <h2>This is where you can submit a story!</h2>
+
+            {!user && (
+                <p>
+                    Please sign in to submit a story.
+                </p>
+            )}
+
             <form onSubmit={handleSubmit}>
                 <div>
                     <label>Title:</label>
@@ -49,6 +66,7 @@ function StorySubmission() {
                 </div>
                 <button
                     type="submit"
+                    disabled={!user}
                 >
                     Submit
                 </button>
