@@ -1,20 +1,18 @@
-import { useState } from 'react'
 import './App.css'
+import Home from './pages/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import StorySubmission from './pages/StorySubmission'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Hi, I'm Hoovi!</h1>
-      <p className="read-the-docs">
-        Work in progress check back soon!
-      </p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/story-submission" element={<StorySubmission />} />
+        </Routes>
+      </Router>
     </>
   )
 }
