@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { Button, HStack } from "@chakra-ui/react";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -39,6 +40,10 @@ function Login() {
     return (
         <>
             <h2>Login!</h2>
+            <HStack>
+                <Button>Click me</Button>
+                <Button>Click me</Button>
+            </HStack>
             <form onSubmit={handleCreateUser}>
                 <div>
                     <label>Email</label>
