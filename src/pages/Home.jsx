@@ -20,10 +20,10 @@ function Home() {
                     <Box style={{ backgroundColor: "var(--color-button)" }} w={{ md: "100vw", lg: "65vw" }} h={{ base: "50%", md: "100%" }} pt="50px" pr="50px" pl="50px" pb="16px">
                         <VStack justifyContent="center" alignItems={{ md: "center", lg: "start" }} h="100%">
                             <Text fontSize={{ base: "40px", sm: "50px", md: "100px" }} textAlign={{ base: "center" }} fontWeight="bold">Hi, I'm Hoovi!</Text>
-                            <Text textAlign={{ base: "center", lg: "start" }} textStyle="xl" w={{ base: "100%", lg: "40vw" }}>
+                            <Text textAlign={{ base: "center", lg: "start" }} textStyle={{ base: "md", md: "xl"}} w={{ base: "100%", lg: "40vw" }}>
                                 I want to learn about your experiences as a student at UVA! Feel free to submit an <b>anonymous story</b> or look at those written by other people on Grounds
                             </Text>
-                            <Button size="xl" mt={6}>
+                            <Button size={{ base: "lg", md: "xl" }} mt={6}>
                                 <Link to="/story-submission">Submit a Story</Link>
                             </Button>
                         </VStack>
