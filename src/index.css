@@ -1,3 +1,86 @@
+/* color palette from <https://github.com/vuejs/theme> */
+/* happy hues (--hh) color pallete from <https://www.happyhues.co/palettes/1> */
+:root {
+  --font-size-mobile-body: 12px;
+  --font-size-mobile-header: 14px;
+  --font-size-caption: 14px;
+  --font-size-body: 16px;
+  --font-size-h4: 18px;
+  --font-size-h3: 20px;
+  --font-size-h2: 24px;
+
+  --padding-component: 20px;
+
+  --border-radius-main: 12px;
+  --border-radius-album: 8px;
+
+  --hh-background: #fffffe;
+  --hh-headline: #181818;
+  --hh-paragraph: #2e2e2e;
+  --hh-button: #4fc4cf;
+  --hh-button-text: #181818;
+  --hh-secondary: #994ff3;
+  --hh-tertiary: #fbdd74;
+  --hh-main: #f2eef5;
+  --hh-highlight: #4fc4cf;
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--hh-button);
+  /* --color-background-soft: var(--vt-c-white-soft);
+  --color-background-mute: var(--vt-c-white-mute); */
+  --color-button: var(--hh-button);
+  --color-secondary: var(--hh-secondary);
+
+  /* --color-border: var(--vt-c-divider-light-2);
+  --color-border-hover: var(--vt-c-divider-light-1); */
+  --color-container-bg: var(--hh-main);
+  --color-heading: var(--hh-main);
+  /* --color-text: var(--vt-c-text-light-1); */
+  --color-text: var(--hh-paragraph);
+
+  --section-gap: 160px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-headline);
+    /* --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute); */
+
+    /* --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1); */
+
+    --color-heading: var(--color-background);
+    --color-text: var(--color-main);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: overlay;
+}
+
+/* For WebKit-based browsers like Chrome, made scroll bar invisible */
+/* ::-webkit-scrollbar {
+  width: 0;
+} */
+
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
