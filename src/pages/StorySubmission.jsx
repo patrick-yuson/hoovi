@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { collection, addDoc } from "firebase/firestore";
-import { auth, db } from "../../firebase.js";
+// import { collection, addDoc } from "firebase/firestore";
+import { auth } from "../../firebase.js"; // Add db
 import { onAuthStateChanged } from "firebase/auth";
 
 function StorySubmission() {
@@ -22,16 +22,16 @@ function StorySubmission() {
         console.log("Story title", title);
         console.log("Story text", text);
 
-        try {
-            const docRef = await addDoc(collection(db, "stories"), {
-                title: title,
-                story: text,
-            })
-            console.log("Added document with ID: ", docRef.id);
-        }
-        catch (e) {
-            console.error("Error adding new story: ", e);
-        }
+        // try {
+        //     const docRef = await addDoc(collection(db, "stories"), {
+        //         title: title,
+        //         story: text,
+        //     })
+        //     console.log("Added document with ID: ", docRef.id);
+        // }
+        // catch (e) {
+        //     console.error("Error adding new story: ", e);
+        // }
     }
 
     return (

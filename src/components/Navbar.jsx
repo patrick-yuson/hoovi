@@ -5,12 +5,15 @@ import { Link } from "react-router-dom";
 import {
   Box,
   Button,
+  CloseButton,
+  Drawer,
   Flex,
   Text,
   IconButton,
   Popover,
   Portal,
   Stack,
+  StackSeparator,
 } from '@chakra-ui/react'
 import { FiMenu, FiX } from 'react-icons/fi';
 import { ColorModeButton } from '@/components/ui/color-mode';
@@ -20,6 +23,12 @@ import { auth } from "../../firebase.js";
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [user, setUser] = useState(null);
+    const navLinks = [
+        { label: "Submit a Story", to: "/story-submission" },
+        { label: "All Stories", to: "/stories" },
+        { label: "Hoovi Gallery", to: "/gallery" },
+      ];
+      
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currUser) => {
@@ -43,15 +52,62 @@ function Navbar() {
                 align="center"
                 justify="space-between"
             >
-                <IconButton
-                    display={{ base: 'inline-flex', md: 'none' }}
-                    onClick={() => setIsOpen(!isOpen)}
-                    variant="ghost"
-                    aria-label={'Toggle Navigation'}
-                    zIndex={1}
-                >
-                    {isOpen ? <FiX color="black" size={20} /> : <FiMenu color="black" size={24} />}
-                </IconButton>
+                <Drawer.Root placement="left" size="xs">
+                    <Drawer.Trigger asChild>
+                        <IconButton
+                            display={{ base: 'inline-flex', md: 'none' }}
+                            onClick={() => setIsOpen(!isOpen)}
+                            variant="ghost"
+                            aria-label={'Toggle Navigation'}
+                            zIndex={1}
+                        >
+                            {isOpen ? <FiX color="black" size={20} /> : <FiMenu color="black" size={24} />}
+                        </IconButton>
+                    </Drawer.Trigger>
+                    <Portal>
+                        <Drawer.Backdrop />
+                        <Drawer.Positioner>
+                            <Drawer.Content>
+                            <Drawer.Header>
+                                <Drawer.Title>
+                                    <Text
+                                        cursor="pointer"
+                                        onClick={() => {
+                                            setIsOpen(false);
+                                            setTimeout(() => {
+                                                window.location.href = "/"; 
+                                            }, 50); 
+                                        }}
+                                    >
+                                        Hoovi
+                                    </Text>
+                                </Drawer.Title>
+                            </Drawer.Header>
+                            <Drawer.Body>
+                                <Stack direction="column" spacing={4} separator={<StackSeparator />}>
+                                    {navLinks.map((link) => (
+                                        <Button 
+                                            key={link.to} 
+                                            variant="ghost"
+                                            onClick={() => {
+                                                setIsOpen(false);
+                                                setTimeout(() => {
+                                                    window.location.href = link.to; 
+                                                }, 50); 
+                                            }}
+                                        >
+                                            {link.label}
+                                        </Button>
+                                    ))}
+                                </Stack>
+                            </Drawer.Body>
+                            <Drawer.CloseTrigger asChild>
+                                <CloseButton size="sm" onClick={() => setIsOpen(false)}/>
+                            </Drawer.CloseTrigger>
+                            </Drawer.Content>
+                        </Drawer.Positioner>
+                    </Portal>
+                </Drawer.Root>
 
                 <Flex
                     align="center"
@@ -70,16 +126,13 @@ function Navbar() {
                         <Link to="/">Hoovi</Link>
                     </Text>
                     <Stack direction="row" spacing={4}>
-                        <Button variant="ghost">
-                            <Link to="/story-submission">Submit a Story</Link>
-                        </Button>
-                        <Button variant="ghost">
-                            <Link to="/stories">All Stories</Link>
-                        </Button>
-                        <Button variant="ghost">
-                            <Link to="/gallery">Hoovi Gallery</Link>
-                        </Button>
+                        {navLinks.map((link) => (
+                            <Button key={link.to} variant="ghost">
+                            <Link to={link.to}>{link.label}</Link>
+                            </Button>
+                        ))}
                     </Stack>
+
                 </Flex>
 
                 {/* Mobile Header */}
