@@ -1,10 +1,16 @@
 // import { useState } from "react";
+import {
+    Flex,
+    Heading
+} from "@chakra-ui/react";
 
 function StorySubmission() {
 
     return (
         <>
-            <h2>This is where you can submit a story!</h2>
+            <Flex w="100vw" h="100vh" justifyContent="center" alignItems="center">
+                <Heading size="2xl">Submit a Story Here!</Heading>
+            </Flex>
         </>
     )
 }
