@@ -46,7 +46,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--hh-main);
+    --color-background: var(--hh-paragraph);
     /* --color-background-soft: var(--vt-c-black-soft);
     --color-background-mute: var(--vt-c-black-mute); */
 

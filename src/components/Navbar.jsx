@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -17,26 +17,14 @@ import {
 } from '@chakra-ui/react'
 import { FiMenu, FiX } from 'react-icons/fi';
 import { ColorModeButton } from '@/components/ui/color-mode';
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../../firebase.js";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-    const [user, setUser] = useState(null);
     const navLinks = [
         { label: "Submit a Story", to: "/story-submission" },
         { label: "All Stories", to: "/stories" },
         { label: "Hoovi Gallery", to: "/gallery" },
       ];
-      
-
-    useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (currUser) => {
-            setUser(currUser);
-        })
-
-        return () => unsubscribe();
-    }, []);
 
     return (
         <Box>
@@ -160,44 +148,8 @@ function Navbar() {
                     align="center"
                 >
                     <ColorModeButton />
-                    {!user ? 
-                        <Button>
-                            <Link to="/login">Sign In</Link>
-                        </Button> 
-                        : 
-                        <Popover.Root>
-                            <Popover.Trigger asChild>
-                                <Button variant="ghost">{user.email}</Button>
-                            </Popover.Trigger>
-                            <Portal>
-                                <Popover.Positioner>
-                                    <Popover.Content>
-                                        <Popover.Header fontWeight="bold">Account</Popover.Header>
-                                        <Popover.Body>
-                                            <Button
-                                                color="red"
-                                                variant="surface"
-                                                onClick={() => {
-                                                    signOut(auth);
-                                                }}
-                                            >
-                                                Sign Out
-                                            </Button>
-                                        </Popover.Body>
-                                    </Popover.Content>
-                                </Popover.Positioner>
-                            </Portal>
-                        </Popover.Root>
-                    }
                 </Stack>
             </Flex>
-
-            {/* Mobile Buttons */}
-            {isOpen && (
-                <Stack p={4} display={{ md: 'none' }}>
-                <Button variant="ghost" w="full">Sign In</Button>
-                </Stack>
-            )}
         </Box>
     )
 }
