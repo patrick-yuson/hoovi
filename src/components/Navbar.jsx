@@ -10,13 +10,12 @@ import {
   Flex,
   Text,
   IconButton,
-  Popover,
   Portal,
   Stack,
   StackSeparator,
 } from '@chakra-ui/react'
 import { FiMenu, FiX } from 'react-icons/fi';
-// import { ColorModeButton } from '@/components/ui/color-mode';
+import { ColorModeButton } from '@/components/ui/color-mode';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -72,6 +71,9 @@ function Navbar() {
                                                 window.location.href = "/"; 
                                             }, 50); 
                                         }}
+                                        _dark={{
+                                            color: "var(--color-main)"
+                                        }}
                                     >
                                         Hoovi
                                     </Text>
@@ -116,13 +118,23 @@ function Navbar() {
                         w="full"
                         pointerEvents="auto"
                         cursor="pointer"
+                        _dark={{
+                            color: "var(--color-main)"
+                        }}
+                        color="var(--hh-paragraph)"
                     >
                         <Link to="/">Hoovi</Link>
                     </Text>
                     <Stack direction="row" spacing={4}>
                         {navLinks.map((link) => (
-                            <Button key={link.to} variant="ghost">
-                            <Link to={link.to}>{link.label}</Link>
+                            <Button 
+                                key={link.to} 
+                                variant="ghost"
+                                _hover={{
+                                    bg: "var(--color-button)"
+                                }}
+                            >
+                                <Link to={link.to}>{link.label}</Link>
                             </Button>
                         ))}
                     </Stack>
@@ -153,7 +165,7 @@ function Navbar() {
                     display={{ base: 'none', md: 'flex' }}
                     align="center"
                 >
-                    {/* <ColorModeButton /> */}
+                    <ColorModeButton />
                 </Stack>
             </Flex>
         </Box>
