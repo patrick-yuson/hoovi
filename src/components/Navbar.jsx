@@ -4,15 +4,17 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
+  Button,
   Flex,
   Text,
   IconButton,
-  Button,
+  Popover,
+  Portal,
   Stack,
 } from '@chakra-ui/react'
 import { FiMenu, FiX } from 'react-icons/fi';
 import { ColorModeButton } from '@/components/ui/color-mode';
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebase.js";
 
 function Navbar() {
@@ -69,10 +71,10 @@ function Navbar() {
                     </Text>
                     <Stack direction="row" spacing={4}>
                         <Button variant="ghost">
-                            <Link to="/">Home</Link>
+                            <Link to="/story-submission">Submit a Story</Link>
                         </Button>
                         <Button variant="ghost">
-                            <Link to="/story-submission">Submit a Story</Link>
+                            <Link to="/stories">All Stories</Link>
                         </Button>
                         <Button variant="ghost">
                             <Link to="/gallery">Hoovi Gallery</Link>
@@ -110,9 +112,30 @@ function Navbar() {
                             <Link to="/login">Sign In</Link>
                         </Button> 
                         : 
-                        <Text>
-                            {user.email}
-                        </Text>}
+                        <Popover.Root>
+                            <Popover.Trigger asChild>
+                                <Button variant="ghost">{user.email}</Button>
+                            </Popover.Trigger>
+                            <Portal>
+                                <Popover.Positioner>
+                                    <Popover.Content>
+                                        <Popover.Header fontWeight="bold">Account</Popover.Header>
+                                        <Popover.Body>
+                                            <Button
+                                                color="red"
+                                                variant="surface"
+                                                onClick={() => {
+                                                    signOut(auth);
+                                                }}
+                                            >
+                                                Sign Out
+                                            </Button>
+                                        </Popover.Body>
+                                    </Popover.Content>
+                                </Popover.Positioner>
+                            </Portal>
+                        </Popover.Root>
+                    }
                 </Stack>
             </Flex>
 

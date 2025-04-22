@@ -5,6 +5,7 @@ import StorySubmission from './pages/StorySubmission';
 import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Gallery from './pages/Gallery';
+import Stories from './pages/Stories';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/story-submission" element={<StorySubmission />} />
           <Route path="/login" element={<Login />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/stories" element={<Stories />} />
         </Routes>
       </Router>
     </>

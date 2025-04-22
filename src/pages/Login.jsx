@@ -35,7 +35,7 @@ function Login() {
             setFormError("Invalid email");
         } else if (isCreatingAccount && confirmPassword !== password) {
             setFormError("Passwords do not match");
-        } else if (password === "" || confirmPassword === "") {
+        } else if (password === "" || (isCreatingAccount && confirmPassword === "")) {
             setFormError("Password fields cannot be empty");
         } else {
 

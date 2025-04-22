@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { Link } from "react-router-dom";
 import {
-    Button,
     Heading,
     VStack
 } from "@chakra-ui/react";
@@ -21,12 +19,6 @@ function Home() {
                     count is {count}
                     </button>
                 </div>
-                <Button>
-                    <Link to="/story-submission">Submit a story!</Link>
-                </Button>
-                <Button>
-                    <Link to="/login">Login</Link>
-                </Button>
             </VStack>
         </>
     )
