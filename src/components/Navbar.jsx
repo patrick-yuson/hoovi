@@ -16,7 +16,7 @@ import {
   StackSeparator,
 } from '@chakra-ui/react'
 import { FiMenu, FiX } from 'react-icons/fi';
-import { ColorModeButton } from '@/components/ui/color-mode';
+// import { ColorModeButton } from '@/components/ui/color-mode';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,13 +30,19 @@ function Navbar() {
         <Box>
             <Flex
                 as="nav"
-                css={{ "--color": "var(--color-button)"}}
-                style={{ backgroundColor: "var(--color)" }}
-                minH={'60px'}
+                position="fixed"
+                top="0"
+                left="0"
+                right="0"
+                zIndex="999"
+                style={{ 
+                    backgroundColor: "rgba(255, 255, 255, 0.44)", 
+                    backdropFilter: "blur(8px)",
+                    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)"
+                }}
+                minH="60px"
                 py={2}
                 px={4}
-                borderBottom={1}
-                borderStyle="solid"
                 align="center"
                 justify="space-between"
             >
@@ -47,7 +53,7 @@ function Navbar() {
                             onClick={() => setIsOpen(!isOpen)}
                             variant="ghost"
                             aria-label={'Toggle Navigation'}
-                            zIndex={1}
+                            zIndex={2}
                         >
                             {isOpen ? <FiX color="black" size={20} /> : <FiMenu color="black" size={24} />}
                         </IconButton>
@@ -147,7 +153,7 @@ function Navbar() {
                     display={{ base: 'none', md: 'flex' }}
                     align="center"
                 >
-                    <ColorModeButton />
+                    {/* <ColorModeButton /> */}
                 </Stack>
             </Flex>
         </Box>
