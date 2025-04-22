@@ -51,13 +51,13 @@ function Home() {
                             src="https://store.solesavy.com/cdn/shop/files/smiski-dressing-5_1024x1024_1e858ce6-84e5-43a6-b4b2-cb7c28fcf950.webp?v=1726943711"
                         />
                     </Box>
-                    <Box _dark={{ bg: "var(--hh-paragraph)" }} bg="var(--color-main)" w={{ md: "100vw", lg: "65vw" }} p={20}>
+                    <Box _dark={{ bg: "var(--hh-paragraph)" }} bg="var(--color-main)" w={{ md: "100vw", lg: "65vw" }} pt="50px" pr="50px" pl="50px" pb="16px">
                         <VStack justifyContent="center" alignItems={{ md: "center", lg: "start" }} h="100%">
                             <Text fontSize={{ base: "40px", sm: "50px" }} textAlign={{ base: "center" }} fontWeight="bold" style={{ color: "var(--color-button)" }}>About Me</Text>
-                            <Text _dark={{ color: "var(--color-main)" }} color="var(--hh-paragraph)" textAlign={{ base: "center", lg: "start" }} textStyle="xl">
+                            <Text _dark={{ color: "var(--color-main)" }} color="var(--hh-paragraph)" textStyle={{ base: "md", md: "xl"}} textAlign={{ base: "center", lg: "start" }}>
                                 I was born out of a project meant to tackle the idea of Monuments and the power of Public Space. Having been placed all around Grounds, I get to witness student life in its most natural state. But what I really want is for you all to submit stories about your time at UVA thus far, whether you just arrived last year or about to walk the Lawn within a month.
                             </Text>
-                            <Text _dark={{ color: "var(--color-main)" }} color="var(--hh-paragraph)" textAlign={{ base: "center", lg: "start" }} textStyle="xl" mt={4}>
+                            <Text _dark={{ color: "var(--color-main)" }} color="var(--hh-paragraph)" textStyle={{ base: "md", md: "xl"}} textAlign={{ base: "center", lg: "start" }} mt={4}>
                                 Together, we'll make our own monument in digital space - a monument to UVA where all voices should be heard and no person left behind.
                             </Text>
                         </VStack>

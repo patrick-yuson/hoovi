@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "src": "https://i.ebayimg.com/images/g/FwsAAeSweMtn28Lg/s-l400.jpg",
+        "alt": "Sunday Series",
+        "name": "Sunday Series",
+        "description": "Latest addition to the collection"
+    },
+    {
+        "id": 2,
+        "src": "https://asburyparkfunhouse.com/cdn/shop/files/pkg_s1_chibi-smiski-s1_c2160279-3892-4490-af40-7a70896adc6d.png?v=1699631643",
+        "alt": "Hiding Series",
+        "name": "Hiding Series",
+        "description": "Sneaking around the corner..."
+    },
+    {
+        "id": 3,
+        "src": "https://i5.walmartimages.com/seo/Dreams-USA-Smiski-At-Work-ATBC-PVC-Decorative-Figurine_5722ddd4-7a13-40f2-98df-9c664c9e5a91.83bcc88bb06d645de5196602930ec91a.jpeg",
+        "alt": "Smiskis at Work",
+        "name": "Smiskis at Work",
+        "description": "Working hard or harldy working?"
+    },
+    {
+        "id": 4,
+        "src": "https://i.ebayimg.com/images/g/FwsAAeSweMtn28Lg/s-l400.jpg",
+        "alt": "Sunday Series",
+        "name": "Sunday Series",
+        "description": "Latest addition to the collection"
+    },
+    {
+        "id": 5,
+        "src": "https://asburyparkfunhouse.com/cdn/shop/files/pkg_s1_chibi-smiski-s1_c2160279-3892-4490-af40-7a70896adc6d.png?v=1699631643",
+        "alt": "Hiding Series",
+        "name": "Hiding Series",
+        "description": "Sneaking around the corner..."
+    },
+    {
+        "id": 6,
+        "src": "https://i5.walmartimages.com/seo/Dreams-USA-Smiski-At-Work-ATBC-PVC-Decorative-Figurine_5722ddd4-7a13-40f2-98df-9c664c9e5a91.83bcc88bb06d645de5196602930ec91a.jpeg",
+        "alt": "Smiskis at Work",
+        "name": "Smiskis at Work",
+        "description": "Working hard or harldy working?"
+    }
+]
