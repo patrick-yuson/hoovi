@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useState, useEffect } from "react";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import {
     Box,
     Button,
@@ -11,54 +11,63 @@ import {
     Spacer,
     Text,
 } from '@chakra-ui/react';
-import { toaster } from "@/components/ui/toaster";
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const [passwordsMatch, setPasswordsMatch] = useState(false);
     const [isCreatingAccount, setIsCreatingAccount] = useState(false);
+    const [formError, setFormError] = useState("");
     const auth = getAuth();
+
+    const validateEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Created User: ", email);
 
-        if (isCreatingAccount) {
-            if (password != confirmPassword) {
-                toaster.create({
-                    description: "Passwords don't match",
-                    type: "error",
-                    duration: 3000,
-                });
+        if (!validateEmail(email)) {
+            setFormError("Invalid email");
+        } else if (isCreatingAccount && confirmPassword !== password) {
+            setFormError("Passwords do not match");
+        } else if (password === "" || confirmPassword === "") {
+            setFormError("Password fields cannot be empty");
+        } else {
+
+            console.log("Created User: ", email);
+
+            if (isCreatingAccount) {
+                createUserWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        console.log("User added: ", userCredential.user);
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.error(errorCode, ": ", errorMessage);
+                        setFormError(errorMessage);
+                    })
+            } else {
+                console.log("Signing in User: ", email);
+                signInWithEmailAndPassword(auth, email, password)
+                    .then((userCredential) => {
+                        console.log("Signed in as: ", userCredential.user);
+                    })
+                    .catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        console.error(errorCode, ": ", errorMessage);
+                        setFormError(errorMessage);
+                    })
             }
-
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    console.log("User added: ", userCredential.user);
-                })
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
-                    console.error(errorCode, ": ", errorMessage);
-                })
         }
     }
 
-    // const handleSignIn = async (e) => {
-    //     e.preventDefault();
-
-    //     console.log("Signing in User: ", email);
-    //     signInWithEmailAndPassword(auth, email, password)
-    //         .then((userCredential) => {
-    //             console.log("Signed in as: ", userCredential.user);
-    //         })
-    //         .catch((error) => {
-    //             const errorCode = error.code;
-    //             const errorMessage = error.message;
-    //             console.error(errorCode, ": ", errorMessage);
-    //         })
-    // }
+    useEffect(() => {
+        setPasswordsMatch(confirmPassword !== "" && password === confirmPassword);
+    }, [password, confirmPassword]);
 
     return (
         <>
@@ -69,7 +78,7 @@ function Login() {
                 h="100vh"
             >
                 <Box 
-                    minW={{ base: "100%", sm: "sm", md: "md"}}
+                    w={{ base: "100%", sm: "sm", md: "md"}}
                     mx="auto" 
                     p={6} 
                     minH={500}
@@ -105,18 +114,19 @@ function Login() {
                                 type="password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
+                                borderColor={isCreatingAccount && confirmPassword ? (passwordsMatch ? "green" : "red") : undefined}
                             />
                         </Field.Root>
                         {isCreatingAccount && (
                             <Field.Root>
                                 <Field.Label>
-                                    Confirm Password
-                                    <Field.RequiredIndicator />
+                                    Confirm Password <Field.RequiredIndicator />
                                 </Field.Label>
                                 <Input
                                     type="password"
                                     value={confirmPassword}
                                     onChange={(e) => setConfirmPassword(e.target.value)}
+                                    borderColor={isCreatingAccount && confirmPassword ? (passwordsMatch ? "green" : "red") : undefined}
                                 />
                             </Field.Root>
                         )}
@@ -133,6 +143,13 @@ function Login() {
                             {isCreatingAccount
                             ? 'Already have an account? Login'
                             : "Don't have an account? Create one"}
+                        </Text>
+                        <Text
+                            color="red"
+                            fontSize="sm"
+                            textAlign="center"
+                        >
+                            {formError !== "" ? formError : null}
                         </Text>
                         </VStack>
                     </form>
