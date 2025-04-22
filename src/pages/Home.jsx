@@ -17,7 +17,7 @@ function Home() {
         <> 
             <Flex direction="column">
                 <Flex direction={{ base: "column", lg: "row" }} h="100vh">
-                    <Box style={{ backgroundColor: "var(--color-button)" }} w={{ md: "100vw", lg: "65vw" }} h={{ base: "50%", md: "100%" }} pt="20px" pr="50px" pl="50px" pb="16px">
+                    <Box style={{ backgroundColor: "var(--color-button)" }} w={{ md: "100vw", lg: "65vw" }} h={{ base: "50%", md: "100%" }} pt="50px" pr="50px" pl="50px" pb="16px">
                         <VStack justifyContent="center" alignItems={{ md: "center", lg: "start" }} h="100%">
                             <Text fontSize={{ base: "40px", sm: "50px", md: "100px" }} textAlign={{ base: "center" }} fontWeight="bold">Hi, I'm Hoovi!</Text>
                             <Text textAlign={{ base: "center", lg: "start" }} textStyle="xl" w={{ base: "100%", lg: "40vw" }}>
