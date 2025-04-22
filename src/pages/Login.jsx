@@ -11,6 +11,8 @@ import {
     Spacer,
     Text,
 } from '@chakra-ui/react';
+import { useNavigate } from "react-router-dom";
+import { toaster } from "@/components/ui/toaster";
 
 function Login() {
     const [email, setEmail] = useState("");
@@ -20,6 +22,7 @@ function Login() {
     const [isCreatingAccount, setIsCreatingAccount] = useState(false);
     const [formError, setFormError] = useState("");
     const auth = getAuth();
+    const navigate = useNavigate();
 
     const validateEmail = (email) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -42,6 +45,11 @@ function Login() {
                 createUserWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
                         console.log("User added: ", userCredential.user);
+                        toaster.create({
+                            title: 'Account successfully created!',
+                            type: "success"
+                        });
+                        navigate("/");
                     })
                     .catch((error) => {
                         const errorCode = error.code;
@@ -54,6 +62,11 @@ function Login() {
                 signInWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
                         console.log("Signed in as: ", userCredential.user);
+                        navigate("/");
+                        toaster.create({
+                            title: 'Successfully logged in!',
+                            type: "success"
+                        });
                     })
                     .catch((error) => {
                         const errorCode = error.code;

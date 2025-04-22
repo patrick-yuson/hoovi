@@ -1,7 +1,7 @@
-import { ColorModeButton } from '@/components/ui/color-mode';
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 import {
+    Button,
     Heading,
     VStack
 } from "@chakra-ui/react";
@@ -12,7 +12,6 @@ function Home() {
     return (
         <>
             <VStack justifyContent="center" h="100vh">
-                <ColorModeButton />
                 <Heading size="6xl">Hi, I'm Hoovi!</Heading>
                 <p className="read-the-docs">
                     Work in progress check back soon!
@@ -22,12 +21,12 @@ function Home() {
                     count is {count}
                     </button>
                 </div>
-                <div>
+                <Button>
                     <Link to="/story-submission">Submit a story!</Link>
-                </div>
-                <div>
+                </Button>
+                <Button>
                     <Link to="/login">Login</Link>
-                </div>
+                </Button>
             </VStack>
         </>
     )
