@@ -21,7 +21,7 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const navLinks = [
         { label: "Submit a Story", to: "/story-submission" },
-        { label: "All Stories", to: "/stories" },
+        { label: "Story Archive", to: "/stories" },
         { label: "Hoovi Gallery", to: "/gallery" },
       ];
 

@@ -12,7 +12,17 @@ import galleryData from '@/data/galleryData.json';
 function Gallery() {
     return (
         <>
-            <Flex _dark={{ bg: "var(--hh-paragraph)" }} bg="var(--color-main)" justifyContent="center" alignItems="start" pt={100} pb={100}>
+            <Flex 
+                _dark={{ bg: "var(--hh-paragraph)" }} 
+                bg="var(--color-main)" 
+                // bgGradient="to-t"
+                // gradientFrom="var(--color-tertiary)"
+                // gradientTo="var(--color-secondary)"
+                justifyContent="center" 
+                alignItems="start" 
+                pt={100} 
+                pb={100}
+            >
                 <VStack w={{ base: "80vw", lg: "60vw" }}>
                     <Card.Root w="100%" bg="var(--color-button)" variant="elevanted">
                         <Card.Header>
