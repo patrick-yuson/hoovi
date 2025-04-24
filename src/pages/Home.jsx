@@ -150,7 +150,7 @@ function Home() {
                                     base: { animation: "slide-in-top 800ms ease-out" }
                                 }}
                             >
-                                I was born out of a project meant to tackle the idea of <b>Monuments</b> and the <b>power of Public Space.</b> Having been placed all around Grounds, I get to witness student life in its most natural state. But what I really want is for you all to submit stories about your time at UVA thus far, whether you just arrived last year or about to walk the Lawn within a month.
+                                I was born out of a three-week final project revolving around <b>Monuments</b> and the <b>power of Public Space.</b> We're scattered around Grounds, witnessing student life in its most natural state. Can you find all of us?
                             </Text>
                             <Text 
                                 _dark={{ color: "var(--color-main)" }} 
@@ -164,27 +164,62 @@ function Home() {
                                     base: { animation: "slide-in-top 800ms ease-out" }
                                 }}
                             >
-                                Together, <b>we'll make our own monument in digital space</b> - a monument to UVA where all voices should be heard and no person left behind.
+                                We want to be a vehicle for the creation of a <b> monument in digital space</b> - a monument of UVA where all voices can be heard. To this end, we hope that you all <b>submit an anonymous story</b> or testament about your time at UVA and how the university has impacted you.
                             </Text>
+                            <Text
+                                _dark={{ color: "var(--color-main)" }} 
+                                color="var(--hh-paragraph)" 
+                                textStyle={{ base: "md", md: "xl"}} 
+                                textAlign={{ base: "center", lg: "start" }} 
+                                mt={4}
+                                data-state="open"
+                                _open={{
+                                    lg: { animation: "slide-in-right 800ms ease-out" },
+                                    base: { animation: "slide-in-top 800ms ease-out" }
+                                }}
+                            >
+                                Together we can create an archive of <b>human stories and memories.</b>
+                            </Text>
+                            <Button 
+                                    _dark={{ 
+                                        bg: "var(--color-main)", 
+                                        color: "var(--hh-paragraph)",
+                                        _hover: { 
+                                            bg:"gray.300", 
+                                            color: "black" 
+                                        } 
+                                    }} 
+                                    size={{ base: "lg", md: "xl" }} 
+                                    mt={6} 
+                                    bg="var(--hh-paragraph)" 
+                                    color="var(--color-main)" 
+                                    _hover={{ bg: "gray.600" }}
+                                    data-state="open"
+                                    _open={{
+                                        lg: { animation: "slide-in-right 800ms ease-out" },
+                                    }}
+                                >
+                                    <Link to="/gallery">See All Hoovi</Link>
+                            </Button>
                         </VStack>
                     </Box>
-                    <Box
-                        w={{ base: "100vw" }} 
-                        h={{ base: "75vh" }} 
-                        position="relative" 
-                        display={{ base: "block", lg: "none" }}
-                    >
-                        <Image 
-                            objectFit="cover" 
-                            w="full"
-                            h="full"
-                            position="absolute"
-                            top="0"
-                            left="0"
-                            src="https://patrick-yuson.github.io/hoovi-images/images/12.webp"
-                        />
-                    </Box>
                 </Flex>
+                <Box
+                    w={{ base: "100vw" }} 
+                    h={{ base: "75vh" }} 
+                    position="relative" 
+                    display={{ base: "block", lg: "none" }}
+                >
+                    <Image 
+                        objectFit="cover" 
+                        w="full"
+                        h="full"
+                        position="absolute"
+                        top="0"
+                        left="0"
+                        src="https://patrick-yuson.github.io/hoovi-images/images/12.webp"
+                    />
+                </Box>
             </Flex>
         </>
     )

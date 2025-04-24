@@ -1,44 +1,122 @@
 [
     {
         "id": 1,
-        "src": "https://i.ebayimg.com/images/g/FwsAAeSweMtn28Lg/s-l400.jpg",
-        "alt": "Sunday Series",
-        "name": "Sunday Series",
-        "description": "Latest addition to the collection"
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/01.webp",
+        "alt": "Hoovi 01",
+        "name": "01"
     },
     {
         "id": 2,
-        "src": "https://asburyparkfunhouse.com/cdn/shop/files/pkg_s1_chibi-smiski-s1_c2160279-3892-4490-af40-7a70896adc6d.png?v=1699631643",
-        "alt": "Hiding Series",
-        "name": "Hiding Series",
-        "description": "Sneaking around the corner..."
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/02.webp",
+        "alt": "Hoovi 02",
+        "name": "02"
     },
     {
         "id": 3,
-        "src": "https://i5.walmartimages.com/seo/Dreams-USA-Smiski-At-Work-ATBC-PVC-Decorative-Figurine_5722ddd4-7a13-40f2-98df-9c664c9e5a91.83bcc88bb06d645de5196602930ec91a.jpeg",
-        "alt": "Smiskis at Work",
-        "name": "Smiskis at Work",
-        "description": "Working hard or harldy working?"
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/03.webp",
+        "alt": "Hoovi 03",
+        "name": "03"
     },
     {
         "id": 4,
-        "src": "https://i.ebayimg.com/images/g/FwsAAeSweMtn28Lg/s-l400.jpg",
-        "alt": "Sunday Series",
-        "name": "Sunday Series",
-        "description": "Latest addition to the collection"
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/04.webp",
+        "alt": "Hoovi 04",
+        "name": "04"
     },
     {
         "id": 5,
-        "src": "https://asburyparkfunhouse.com/cdn/shop/files/pkg_s1_chibi-smiski-s1_c2160279-3892-4490-af40-7a70896adc6d.png?v=1699631643",
-        "alt": "Hiding Series",
-        "name": "Hiding Series",
-        "description": "Sneaking around the corner..."
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/05.webp",
+        "alt": "Hoovi 05",
+        "name": "05"
     },
     {
         "id": 6,
-        "src": "https://i5.walmartimages.com/seo/Dreams-USA-Smiski-At-Work-ATBC-PVC-Decorative-Figurine_5722ddd4-7a13-40f2-98df-9c664c9e5a91.83bcc88bb06d645de5196602930ec91a.jpeg",
-        "alt": "Smiskis at Work",
-        "name": "Smiskis at Work",
-        "description": "Working hard or harldy working?"
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/06.webp",
+        "alt": "Hoovi 06",
+        "name": "06"
+    },
+    {
+        "id": 7,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/07.webp",
+        "alt": "Hoovi 07",
+        "name": "07"
+    },
+    {
+        "id": 8,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/08.webp",
+        "alt": "Hoovi 08",
+        "name": "08"
+    },
+    {
+        "id": 9,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/09.webp",
+        "alt": "Hoovi 09",
+        "name": "09"
+    },
+    {
+        "id": 10,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/10.webp",
+        "alt": "Hoovi 10",
+        "name": "10"
+    },
+    {
+        "id": 11,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/11.webp",
+        "alt": "Hoovi 11",
+        "name": "11"
+    },
+    {
+        "id": 12,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/12.webp",
+        "alt": "Hoovi 12",
+        "name": "12"
+    },
+    {
+        "id": 13,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/13.webp",
+        "alt": "Hoovi 13",
+        "name": "13"
+    },
+    {
+        "id": 14,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/14.webp",
+        "alt": "Hoovi 14",
+        "name": "14"
+    },
+    {
+        "id": 15,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/15.webp",
+        "alt": "Hoovi 15",
+        "name": "15"
+    },
+    {
+        "id": 16,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/16.webp",
+        "alt": "Hoovi 16",
+        "name": "16"
+    },
+    {
+        "id": 17,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/17.webp",
+        "alt": "Hoovi 17",
+        "name": "17"
+    },
+    {
+        "id": 18,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/18.webp",
+        "alt": "Hoovi 18",
+        "name": "18"
+    },
+    {
+        "id": 19,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/19.webp",
+        "alt": "Hoovi 19",
+        "name": "19"
+    },
+    {
+        "id": 20,
+        "src": "https://patrick-yuson.github.io/hoovi-images/images/20.webp",
+        "alt": "Hoovi 20",
+        "name": "20"
     }
 ]
