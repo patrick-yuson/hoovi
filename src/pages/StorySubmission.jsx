@@ -66,7 +66,7 @@ function StorySubmission() {
                             color: "var(--color-main)"
                         }}
                     >
-                        Our hope is for people on Grounds to have a place to <b>anonymously share their experiences</b> at UVA and ultimately create an <b>archive of human testimonies</b> of life at UVA! It can be as long or as short as you'd like, but know that discrimination of any kind will not be tolerated.
+                        Our hope is for people on Grounds to have a place to <b>anonymously share their experiences</b> at UVA and ultimately create an <b>archive of human testimonies</b> of life at UVA! It can be as long or as short as you'd like, but know that discrimination or hate speech of any kind will not be tolerated.
                     </Text>
                     <Button 
                         mt={{ base: 5, md: 10}} 
