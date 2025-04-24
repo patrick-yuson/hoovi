@@ -10,12 +10,14 @@ import {
   Flex,
   Text,
   IconButton,
+  Image,
   Portal,
   Stack,
   StackSeparator,
 } from '@chakra-ui/react'
 import { FiMenu, FiX } from 'react-icons/fi';
 import { ColorModeButton } from '@/components/ui/color-mode';
+import hooviTextLogo from '../assets/hoovi_text_logo.svg';
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -63,20 +65,23 @@ function Navbar() {
                             <Drawer.Content>
                             <Drawer.Header>
                                 <Drawer.Title>
-                                    <Text
-                                        cursor="pointer"
-                                        onClick={() => {
-                                            setIsOpen(false);
-                                            setTimeout(() => {
-                                                window.location.href = "/"; 
-                                            }, 50); 
-                                        }}
-                                        _dark={{
-                                            color: "var(--color-main)"
-                                        }}
+                                    <Flex
+                                        justifyContent="center"
+                                        alignItems="center"
+                                        w="100%"
                                     >
-                                        Hoovi
-                                    </Text>
+                                        <Image
+                                            cursor="pointer"
+                                            onClick={() => {
+                                                setIsOpen(false);
+                                                setTimeout(() => {
+                                                    window.location.href = "/"; 
+                                                }, 50); 
+                                            }}
+                                            w={150}
+                                            src={hooviTextLogo}
+                                        />
+                                    </Flex>
                                 </Drawer.Title>
                             </Drawer.Header>
                             <Drawer.Body>
@@ -98,7 +103,14 @@ function Navbar() {
                                 </Stack>
                             </Drawer.Body>
                             <Drawer.CloseTrigger asChild>
-                                <CloseButton size="sm" onClick={() => setIsOpen(false)}/>
+                                <Flex
+                                    justifyContent="start"
+                                    alignItems="center"
+                                    w="100%"
+                                    pl={7}
+                                >
+                                    <CloseButton size="sm" onClick={() => setIsOpen(false)}/>
+                                </Flex>
                             </Drawer.CloseTrigger>
                             </Drawer.Content>
                         </Drawer.Positioner>
@@ -110,21 +122,15 @@ function Navbar() {
                     gap={6}
                     display={{ base: 'none', md: 'flex' }}
                 >
-                    <Text
-                        fontFamily={'heading'}
-                        fontWeight="bold"
-                        fontSize="lg"
-                        textAlign={{ sm: "center", md: "start" }}
-                        w="full"
-                        pointerEvents="auto"
-                        cursor="pointer"
-                        _dark={{
-                            color: "var(--color-main)"
-                        }}
-                        color="var(--hh-paragraph)"
-                    >
-                        <Link to="/">Hoovi</Link>
-                    </Text>
+                    <Link to="/">
+                        <Image
+                            w={100}
+                            p={2}
+                            pointerEvents="auto"
+                            cursor="pointer"
+                            src={hooviTextLogo}
+                        />
+                    </Link>
                     <Stack direction="row" spacing={4}>
                         {navLinks.map((link) => (
                             <Button 
@@ -142,21 +148,25 @@ function Navbar() {
                 </Flex>
 
                 {/* Mobile Header */}
-                <Text
-                    fontFamily={'heading'}
-                    fontWeight="bold"
-                    fontSize="lg"
-                    textAlign="center"
-                    display={{ sm: "block", md: "none" }}
-                    w="full"
-                    pointerEvents="auto"
-                    cursor="pointer"
+                <Flex
+                    justifyContent="center"
+                    alignItems="center"
                     position="absolute"
                     left="50%"
                     transform="translateX(-50%)"
                 >
-                    <Link to="/">Hoovi</Link>
-                </Text>
+                    <Link to="/">
+                        <Image
+                            w={100}
+                            p={2}
+                            pointerEvents="auto"
+                            cursor="pointer"
+                            src={hooviTextLogo}
+                            display={{ sm: "block", md: "none" }}
+                            zIndex={0}
+                        />
+                    </Link>
+                </Flex>
 
                 {/* Desktop Buttons */}
                 <Stack
