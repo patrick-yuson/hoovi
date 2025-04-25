@@ -11,6 +11,9 @@ import {
 } from "@chakra-ui/react";
 
 function Home() {
+    const handleSubmit = () => {
+        window.open("https://forms.gle/wD8nrvTaH7ZQRMWx5", "_blank");
+    }
 
     return (
         <> 
@@ -57,30 +60,29 @@ function Home() {
                                 I want to learn about your experiences as a student at UVA! Feel free to submit an <b>anonymous story</b> or look at those written by other people on Grounds
                             </Text>
                             <Group justifyContent="center">
-                                <Link to="/story-submission">
-                                    <Button 
-                                        _dark={{ 
-                                            bg: "var(--color-main)", 
-                                            color: "var(--color-button)",
-                                            _hover: { 
-                                                bg:"gray.300", 
-                                            } 
-                                        }} 
-                                        size={{ base: "lg", md: "xl" }} 
-                                        mt={6} 
-                                        bg="var(--color-button)" 
-                                        color="var(--color-main)" 
-                                        _hover={{ 
-                                            bg: "var(--c-primary-hover)" 
-                                        }}
-                                        data-state="open"
-                                        _open={{
-                                            lg: { animation: "slide-in-left 800ms ease-out" },
-                                        }}
-                                    >
-                                        Submit a Story
-                                    </Button>
-                                </Link>
+                                <Button 
+                                    _dark={{ 
+                                        bg: "var(--color-main)", 
+                                        color: "var(--color-button)",
+                                        _hover: { 
+                                            bg:"gray.300", 
+                                        } 
+                                    }} 
+                                    size={{ base: "lg", md: "xl" }} 
+                                    mt={6} 
+                                    bg="var(--color-button)" 
+                                    color="var(--color-main)" 
+                                    _hover={{ 
+                                        bg: "var(--c-primary-hover)" 
+                                    }}
+                                    data-state="open"
+                                    _open={{
+                                        lg: { animation: "slide-in-left 800ms ease-out" },
+                                    }}
+                                    onClick={handleSubmit}
+                                >
+                                    Submit a Story
+                                </Button>
                                 <Link to="/stories">
                                     <Button 
                                         _dark={{ 

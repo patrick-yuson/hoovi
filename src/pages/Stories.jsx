@@ -74,6 +74,7 @@ function Stories() {
                                 bg="white"
                                 borderRadius="md"
                                 h={50}
+                                color="black"
                             />
                         </InputGroup>
                         <IconButton

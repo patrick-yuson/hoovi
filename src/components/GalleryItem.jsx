@@ -61,6 +61,7 @@ function GalleryItem({ data }) {
                                     <Text
                                         fontSize={25}
                                         fontWeight="bold"
+                                        color="var(--color-button)"
                                         _dark={{
                                             color: "var(--color-main)"
                                         }}
