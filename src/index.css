@@ -20,9 +20,14 @@
   --hh-button: #4fc4cf;
   --hh-button-text: #181818;
   --hh-secondary: #994ff3;
-  --hh-tertiary: #fbdd74;
+  /* --hh-tertiary: #fbdd74; */
+  --hh-tertiary: #ffcc00;
+  /* --hh-tertiary: #ff6b6b; */
   --hh-main: #f2eef5;
   --hh-highlight: #4fc4cf;
+
+  --c-primiary: #0d0855;
+  --c-primary-hover: #140f84;
 }
 
 /* semantic color variables for this project */
@@ -30,7 +35,7 @@
   --color-background: var(--hh-main);
   /* --color-background-soft: var(--vt-c-white-soft);
   --color-background-mute: var(--vt-c-white-mute); */
-  --color-button: var(--hh-button);
+  --color-button: var(--c-primiary);
   --color-secondary: var(--hh-secondary);
   --color-tertiary: var(--hh-tertiary);
 

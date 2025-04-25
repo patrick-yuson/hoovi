@@ -133,15 +133,18 @@ function Navbar() {
                     </Link>
                     <Stack direction="row" spacing={4}>
                         {navLinks.map((link) => (
-                            <Button 
-                                key={link.to} 
-                                variant="ghost"
-                                _hover={{
-                                    bg: "var(--color-button)"
-                                }}
-                            >
-                                <Link to={link.to}>{link.label}</Link>
-                            </Button>
+                            <Link to={link.to}>
+                                <Button 
+                                    key={link.to} 
+                                    variant="ghost"
+                                    _hover={{
+                                        bg: "var(--color-button)",
+                                        color: "var(--color-main)"
+                                    }}
+                                >
+                                    {link.label}
+                                </Button>
+                            </Link>
                         ))}
                     </Stack>
 
