@@ -25,7 +25,7 @@ function Gallery() {
                 pt={100} 
                 pb={100}
             >
-                <VStack w={{ base: "80vw", lg: "60vw" }}>
+                <VStack w={{ base: "90vw", sm: "80vw", lg: "60vw" }}>
                     <Card.Root w="100%" bg="var(--color-button)" variant="elevanted">
                         <Card.Header>
                             <Heading textAlign="center" size="2xl" _dark={{ color: "var(--hh-paragraph)" }} color="var(--color-main)">HOOVI GALLERY</Heading>

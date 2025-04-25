@@ -5,6 +5,7 @@ import {
     Text,
     VStack,
 } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 function StoryCard({ data }) {
     const date = new Date(data.timestamp);
@@ -30,35 +31,45 @@ function StoryCard({ data }) {
                 cursor="pointer"
                 position="relative"
             >
-                <Card.Root 
-                    w="100%" 
-                    overflow="hidden" 
-                    variant="elevated"
-                    p={6}
-                >
-                    <VStack alignItems="start">
-                        <HStack
-                            justifyContent="space-between"
-                            w="100%"
-                        >
-                            <Text
-                                fontWeight="bold"
-                                fontSize={24}
+                <Link to={`/stories/${data.id}`}>
+                    <Card.Root 
+                        w={{ base:"100%", sm: "100%" }}
+                        overflow="hidden" 
+                        variant="elevated"
+                        p={{ base: 3, sm: 6 }}
+                    >
+                        <VStack alignItems="start">
+                            <HStack
+                                justifyContent="space-between"
+                                w="100%"
                             >
-                                {data.title}
-                            </Text>
-                            <Text>
+                                <Text
+                                    fontWeight="bold"
+                                    fontSize={{ base: 18, sm: 24 }}
+                                >
+                                    {data.title}
+                                </Text>
+                                <Text display={{ base: "none", md: "block" }}>
+                                    {formattedDate}
+                                </Text>
+                            </HStack>
+                            <Text 
+                                display={{base: "block", md: "none" }}
+                                fontSize={{ base: 14, sm: 16 }}
+                            >
                                 {formattedDate}
                             </Text>
-                        </HStack>
-                        <Text
-                            whiteSpace="pre-line"
-                            lineClamp={5}
-                        >
-                            {data.text}
-                        </Text>
-                    </VStack>
-                </Card.Root>
+                            <Text
+                                whiteSpace="pre-line"
+                                // whiteSpace="normal"
+                                lineClamp={{ base: 3, sm: 5 }}
+                                fontSize={{ base: 12, sm: 16 }}
+                            >
+                                {data.text}
+                            </Text>
+                        </VStack>
+                    </Card.Root>
+                </Link>
             </Box>
         </>
     );

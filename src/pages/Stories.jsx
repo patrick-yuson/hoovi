@@ -44,7 +44,7 @@ function Stories() {
                 justifyContent="center"
             >
                 <VStack
-                    w={{ base: "80vw", lg: "60vw" }}
+                    w={{ base: "90vw", sm: "80vw", lg: "60vw" }}
                     gap={8}
                     alignItems="center"
                 >
