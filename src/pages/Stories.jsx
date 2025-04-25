@@ -45,7 +45,7 @@ function Stories() {
             >
                 <VStack
                     w={{ base: "90vw", sm: "80vw", lg: "60vw" }}
-                    gap={8}
+                    gap={4}
                     alignItems="center"
                 >
                     <Text 
