@@ -56,6 +56,7 @@ function StorySubmission() {
                         _dark={{
                             color: "var(--color-main)"
                         }}
+                        fontSize={{ base: 12, sm: 16 }}
                     >
                         Submit stories through the <b>Google Form</b> linked below to be added to the story archive of this website!</Text>
                     <Text
@@ -68,6 +69,7 @@ function StorySubmission() {
                         _dark={{
                             color: "var(--color-main)"
                         }}
+                        fontSize={{ base: 12, sm: 16 }}
                     >
                         Our hope is for people on Grounds to have a place to <b>anonymously share their experiences</b> at UVA and ultimately create an <b>archive of human testimonies</b> of life at UVA! It can be as long or as short as you'd like, but know that discrimination or hate speech of any kind will not be tolerated.
                     </Text>

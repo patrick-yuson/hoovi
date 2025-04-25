@@ -15,14 +15,14 @@ function Home() {
     return (
         <> 
             <Flex direction="column">
-                <Flex direction={{ base: "column", lg: "row" }} h="100vh">
+                <Flex direction={{ base: "column", lg: "row" }} h={{ base: "70vh", sm: "100vh" }}>
                     <Box 
                         _dark={{
                             bg: "var(--color-button)" 
                         }}
                         bg="var(--color-main)"
                         w={{ md: "100vw", lg: "65vw" }} 
-                        h={{ base: "50%", md: "100%" }} 
+                        h={{ base: "70%", sm: "50%", md: "100%" }} 
                         pt="50px" 
                         pr="50px" 
                         pl="50px" 
@@ -110,7 +110,7 @@ function Home() {
                     </Box>
                     <Box 
                         w={{ base: "100vw", lg: "35vw" }} 
-                        h={{ base: "50%", lg: "100%" }} 
+                        h={{ base: "30%", sm: "50%", lg: "100%" }} 
                         position="relative" 
                     >
                         <Image 
@@ -143,7 +143,7 @@ function Home() {
                         h="100%"
                         p="50px"
                     >
-                        <VStack justifyContent="center" alignItems={{ md: "center", lg: "start" }} h="100%">
+                        <VStack justifyContent="center" alignItems={{ base: "center", lg: "start" }} h="100%">
                             <Text 
                                 _dark={{ color: "var(--color-button)" }}
                                 fontSize={{ base: "40px", sm: "50px" }} 
