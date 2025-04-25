@@ -1,11 +1,25 @@
 import {
     Box,
     Card,
+    HStack,
     Text,
     VStack,
 } from "@chakra-ui/react";
 
 function StoryCard({ data }) {
+    const date = new Date(data.timestamp);
+    const timeOnly = date.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+      });
+      const dateOnly = date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric"
+      });
+    const formattedDate = `${dateOnly} ${timeOnly}`;
+
     return (
         <>
             <Box
@@ -23,12 +37,20 @@ function StoryCard({ data }) {
                     p={6}
                 >
                     <VStack alignItems="start">
-                        <Text
-                            fontWeight="bold"
-                            fontSize={24}
+                        <HStack
+                            justifyContent="space-between"
+                            w="100%"
                         >
-                            {data.title}
-                        </Text>
+                            <Text
+                                fontWeight="bold"
+                                fontSize={24}
+                            >
+                                {data.title}
+                            </Text>
+                            <Text>
+                                {formattedDate}
+                            </Text>
+                        </HStack>
                         <Text
                             whiteSpace="pre-line"
                             lineClamp={5}

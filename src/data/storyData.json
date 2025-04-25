@@ -2,16 +2,19 @@
     {
         "id": 1,
         "title": "Hoovi Backstory",
-        "text": "Text text text text\nText text!! Hello\nYESFJLS\nFJLAKSDJFLK\nfasjd\nsdjfklds\nsfdjk\nfjaslkdfjlaksdjflk\nfjalsdkfjdslak\nfjaslsjss\nsssssss\nasdfassddss\na\na\na"
+        "text": "Text text text text\nText text!! Hello\nYESFJLS\nFJLAKSDJFLK\nfasjd\nsdjfklds\nsfdjk\nfjaslkdfjlaksdjflk\nfjalsdkfjdslak\nfjaslsjss\nsssssss\nasdfassddss\na\na\na",
+        "timestamp": "2025-04-24T15:30:00.000Z"
     },
     {
         "id": 2,
         "title": "Another Story. A Hoo Story",
-        "text": "Woooooo placeholder text placeholder text placeholder text\nYes Yes text!!!!\nsafjaldskfj\nasdkjflkasdj\nadjflkasjdfkl\nasldjflaksdj\nalsdkjfklad"
+        "text": "Woooooo placeholder text placeholder text placeholder text\nYes Yes text!!!!\nsafjaldskfj\nasdkjflkasdj\nadjflkasjdfkl\nasldjflaksdj\nalsdkjfklad",
+        "timestamp": "2025-04-24T09:00:00.000Z"
     },
     {
         "id": 3,
         "title": "A Third Story??",
-        "text": "FJALKDSJFLAKSDJFLKADJLFKAJSDLFKJALKSDJ"
+        "text": "FJALKDSJFLAKSDJFLKADJLFKAJSDLFKJALKSDJ",
+        "timestamp": "2025-04-24T07:15:00.000Z"
     }
 ]
