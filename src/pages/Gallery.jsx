@@ -26,14 +26,32 @@ function Gallery() {
                 pb={100}
             >
                 <VStack w={{ base: "90vw", sm: "80vw", lg: "60vw" }}>
-                    <Card.Root w="100%" bg="var(--color-button)" variant="elevanted">
-                        <Card.Header>
-                            <Heading textAlign="center" size="2xl" _dark={{ color: "var(--hh-paragraph)" }} color="var(--color-main)">HOOVI GALLERY</Heading>
-                        </Card.Header>
-                        <Card.Body>
-                            <Text textAlign="center" _dark={{ color: "var(--hh-paragraph)" }} color="var(--color-main)">An archive of all Hoovi scattered around Grounds. Created with red clay and a glaze finish. <b>Can you find them all?</b></Text>
-                        </Card.Body>
-                    </Card.Root>
+                    <Text 
+                        _dark={{ color: "var(--color-main)" }} 
+                        color="var(--color-button)" 
+                        fontSize={{ base: "30px", sm: "40px", md: "75px", lg: "100px" }} 
+                        textAlign={{ base: "center" }} 
+                        fontWeight="bold"
+                        data-state="open"
+                        _open={{
+                            animation: "slide-in-top 1000ms ease-out"
+                        }}
+
+                    >
+                        Hoovi Gallery
+                    </Text>
+                    <Text 
+                        textAlign="center" 
+                        _dark={{ color: "var(--color-main)" }} 
+                        color="var(--color-button)"
+                        data-state="open"
+                        _open={{
+                            animation: "slide-in-top 1000ms ease-out"
+                        }}
+                        mb={4}
+                    >
+                        An archive of all Hoovi scattered around Grounds. Created with red clay and a glaze finish. <b>Can you find them all?</b>
+                    </Text>
                     <Grid templateColumns={{ base: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }} gap={4} maxW="100%" mt={2}>
                         {galleryData.map((item) => (
                             <GalleryItem key={item.id} data={item} />

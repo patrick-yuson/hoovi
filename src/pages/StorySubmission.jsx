@@ -7,21 +7,24 @@ import {
 } from "@chakra-ui/react";
 
 function StorySubmission() {
+    const handleSubmit = () => {
+        window.open("https://forms.gle/wD8nrvTaH7ZQRMWx5", "_blank");
+    }
 
     return (
         <>
             <Flex 
                 _dark={{ 
                     bgGradient: "to-b",
-                    gradientFrom: "#0f172a",
-                    gradientTo: "#334155",
+                    gradientFrom: "var(--color-button)",
+                    gradientTo: "#a29bfe",
                 }} 
                 h="100vh" 
                 justifyContent="center" 
                 alignItems="center" 
                 bgGradient="to-r"
-                gradientFrom="var(--color-button)"
-                gradientTo="var(--color-tertiary)"
+                gradientFrom="#00c2b2"
+                gradientTo="#fbdd74"
                 direction="column"
                 pt={100}
                 pb={100}
@@ -30,8 +33,8 @@ function StorySubmission() {
             >
                 <VStack w={{ base: "80vw", lg: "60vw" }}>
                     <Text 
-                        _dark={{ color: "var(--color-button)" }} 
-                        color="var(--hh-paragraph)" 
+                        _dark={{ color: "var(--color-main)" }} 
+                        color="var(--color-button)" 
                         fontSize={{ base: "30px", sm: "40px", md: "75px", lg: "100px" }} 
                         textAlign={{ base: "center" }} 
                         fontWeight="bold"
@@ -69,12 +72,24 @@ function StorySubmission() {
                         Our hope is for people on Grounds to have a place to <b>anonymously share their experiences</b> at UVA and ultimately create an <b>archive of human testimonies</b> of life at UVA! It can be as long or as short as you'd like, but know that discrimination or hate speech of any kind will not be tolerated.
                     </Text>
                     <Button 
+                        _dark={{
+                            bg: "var(--color-main)",
+                            color: "var(--color-button)",
+                            _hover: {
+                                bg: "gray.300"
+                            }
+                        }}
                         mt={{ base: 5, md: 10}} 
                         w="25vw"
                         data-state="open"
                         _open={{
                             animation: "slide-in-bottom 1000ms ease-out"
                         }}
+                        bg="var(--color-button)"
+                        _hover={{
+                            bg: "var(--c-primary-hover)"
+                        }}
+                        onClick={handleSubmit}
                     >Submit</Button>
                 </VStack>
             </Flex>

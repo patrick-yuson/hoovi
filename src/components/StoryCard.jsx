@@ -26,7 +26,7 @@ function StoryCard({ data }) {
             <Box
                 transition="transform 0.3s ease"
                 _hover={{
-                    transform: "scale(1.03)",
+                    transform: "scale(1.01)",
                 }}
                 cursor="pointer"
                 position="relative"
@@ -36,7 +36,10 @@ function StoryCard({ data }) {
                         w={{ base:"100%", sm: "100%" }}
                         overflow="hidden" 
                         variant="elevated"
-                        p={{ base: 3, sm: 6 }}
+                        p={{ base: 3, sm: 4, md: 6 }}
+                        _dark={{
+                            bg: "var(--color-main)"
+                        }}
                     >
                         <VStack alignItems="start">
                             <HStack
@@ -46,16 +49,21 @@ function StoryCard({ data }) {
                                 <Text
                                     fontWeight="bold"
                                     fontSize={{ base: 18, sm: 24 }}
+                                    color="var(--color-button)"
+                                    _dark={{
+                                        color: "var(--hh-headline)"
+                                    }}
                                 >
                                     {data.title}
                                 </Text>
-                                <Text display={{ base: "none", md: "block" }}>
+                                <Text display={{ base: "none", md: "block" }} _dark={{ color: "var(--hh-paragraph)" }}>
                                     {formattedDate}
                                 </Text>
                             </HStack>
                             <Text 
                                 display={{base: "block", md: "none" }}
                                 fontSize={{ base: 14, sm: 16 }}
+                                _dark={{ color: "var(--hh-paragraph)" }}
                             >
                                 {formattedDate}
                             </Text>
@@ -64,6 +72,7 @@ function StoryCard({ data }) {
                                 // whiteSpace="normal"
                                 lineClamp={{ base: 3, sm: 5 }}
                                 fontSize={{ base: 12, sm: 16 }}
+                                _dark={{ color: "var(--hh-paragraph)" }}
                             >
                                 {data.text}
                             </Text>

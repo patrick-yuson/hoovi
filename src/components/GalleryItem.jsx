@@ -39,7 +39,8 @@ function GalleryItem({ data }) {
                                 position="absolute"
                                 top={2}
                                 left={2}
-                                color="var(--hh-paragraph)"
+                                color="var(--color-button)"
+                                _dark={{ color: "var(--hh-paragraph)" }}
                                 px={2}
                                 py={1}
                                 borderRadius="md"
@@ -60,6 +61,9 @@ function GalleryItem({ data }) {
                                     <Text
                                         fontSize={25}
                                         fontWeight="bold"
+                                        _dark={{
+                                            color: "var(--color-main)"
+                                        }}
                                     >
                                         {data.name}
                                     </Text>

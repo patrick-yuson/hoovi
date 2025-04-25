@@ -7,15 +7,17 @@ import {
     Input,
     InputGroup,
     Text,
-    VStack
+    VStack,
 } from "@chakra-ui/react";
 import { FaSearch, FaSortAmountUp, FaSortAmountDown } from "react-icons/fa";
 import StoryCard from "@/components/StoryCard";
 import storyData from '@/data/storyData.json';
+import { useColorModeValue } from "@/components/ui/color-mode";
 
 function Stories() {
     const [searchQuery, setSearchQuery] = useState("");
     const [sortOrder, setSortOrder] = useState("desc");
+    const iconColor = useColorModeValue("var(--color-button)", "white");
 
     const filteredStories = storyData
         .filter((item) =>
@@ -38,6 +40,7 @@ function Stories() {
             <Flex 
                 _dark={{ bg: "var(--hh-paragraph)" }} 
                 w="100vw"  
+                minH="100vh"
                 bg="var(--color-main)"
                 pt={100}
                 pb={100}
@@ -49,8 +52,8 @@ function Stories() {
                     alignItems="center"
                 >
                     <Text 
-                        _dark={{ color: "var(--color-button)" }} 
-                        color="var(--hh-paragraph)" 
+                        _dark={{ color: "var(--color-main)" }} 
+                        color="var(--color-button)" 
                         fontSize={{ base: "30px", sm: "40px", md: "75px", lg: "100px" }} 
                         textAlign={{ base: "center" }} 
                         fontWeight="bold"
@@ -78,7 +81,7 @@ function Stories() {
                             onClick={handleSortToggle}
                             variant="ghost"
                         >
-                            {sortOrder === "asc" ? <FaSortAmountUp color="black"/> : <FaSortAmountDown color="black"/>}
+                            {sortOrder === "asc" ? <FaSortAmountUp color={iconColor}/> : <FaSortAmountDown color={iconColor}/>}
                         </IconButton>
                     </HStack>
                     <Grid 
