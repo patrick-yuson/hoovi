@@ -8,7 +8,6 @@ import {
   CloseButton,
   Drawer,
   Flex,
-  Text,
   IconButton,
   Image,
   Portal,
@@ -126,16 +125,13 @@ function Navbar() {
                         <Image
                             w={100}
                             p={2}
-                            pointerEvents="auto"
-                            cursor="pointer"
                             src={hooviTextLogo}
                         />
                     </Link>
                     <Stack direction="row" spacing={4}>
                         {navLinks.map((link) => (
-                            <Link to={link.to}>
+                            <Link to={link.to} key={link.to}>
                                 <Button 
-                                    key={link.to} 
                                     variant="ghost"
                                     _hover={{
                                         bg: "var(--color-button)",

@@ -6,20 +6,10 @@ import {
     VStack,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { formatDate } from "@/data/formatDate";
 
 function StoryCard({ data }) {
-    const date = new Date(data.timestamp);
-    const timeOnly = date.toLocaleTimeString("en-US", {
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true
-      });
-      const dateOnly = date.toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-        year: "numeric"
-      });
-    const formattedDate = `${dateOnly} ${timeOnly}`;
+    const formattedDate = formatDate(data.timestamp);
 
     return (
         <>
