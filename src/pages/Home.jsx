@@ -48,6 +48,7 @@ function Home() {
                             </Text>
                             <Text 
                                 _dark={{ color: "var(--color-main)" }} 
+                                color="var(--color-button)" 
                                 textAlign={{ base: "center", lg: "start" }} 
                                 textStyle={{ base: "md", md: "xl"}} 
                                 w={{ base: "100%", lg: "40vw" }}
